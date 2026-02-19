@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Convertidor de Enlace Tidal</title>
+</head>
+<body>
+
+    <h2>Convertir enlace de Tidal</h2>
+
+    <input type="text" id="inputLink" placeholder="Pega el enlace aquí" style="width:300px;">
+    <button onclick="convertir()">Convertir</button>
+
+    <p><strong>Resultado:</strong></p>
+    <input type="text" id="outputLink" readonly style="width:300px;">
+
+    <script>
+        function convertir() {
+            const input = document.getElementById("inputLink").value.trim();
+            
+            if (!input.startsWith("https://tidal.com")) {
+                alert("El enlace debe comenzar con https://tidal.com");
+                return;
+            }
+
+            const nuevoLink = input.replace("https://tidal.com", "https://tidal.squid.wtf");
+            document.getElementById("outputLink").value = nuevoLink;
+        }
+    </script>
+
+</body>
+</html>
